@@ -7,24 +7,24 @@ mlib.rcParams.update({'font.size': 24})
 
 def comp_neuron_with_spin():
     # load data from NEURON
-    with open('../../NEURONcomps/HOCfiles/dataFiles/soma_hh_t_40000.dat') as f:
+    with open('dataFiles/NEURON_t_data.txt') as f:
         neuronTimeArray = f.read().splitlines()
         for count in range(0, len(neuronTimeArray)):
             neuronTimeArray[count] = float(neuronTimeArray[count])
-    with open('../../NEURONcomps/HOCfiles/dataFiles/soma_hh_40000.dat') as f:
+    with open('dataFiles/NEURON_V_data.txt') as f:
         neuronVArray = f.read().splitlines()
         for count in range(0, len(neuronVArray)):
             neuronVArray[count] = float(neuronVArray[count])
 
     # load data from SpiNNaker
-    with open("/Users/mollieward/testSpinEnv/spinnaker_tools/apps/soma_hh_gatingLookUps/10000ts_7na.txt") as file:
+    with open("dataFiles/SpiNNaker_data.txt") as file:
         spinnaker = file.read().splitlines()
         spinnaker = list(filter(None, spinnaker))
         spinnaker = [float(i) for i in spinnaker]
 
     # load data from Jib2
     jib2_array = []
-    with open("/Users/mollieward/Documents/GitHub/PhD/pythonTrials/cableEquation/spinnaker_implementation/jib2/hh_newLookups_jib2_20000.txt") as file:
+    with open("dataFiles/Jib2_data.txt") as file:
         voltageArray = file.read().splitlines()
         for i, str_v, in enumerate(voltageArray):
             replacing = 'exit_res_2[{}] = '.format(i)
