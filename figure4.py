@@ -11,7 +11,7 @@ purd_cmap = mlib.cm.get_cmap('PuRd')
 mlib.rcParams.update({'font.size': 24})
 
 def figure_A():
-    plot_data = np.loadtxt("figure4A_data.txt")
+    plot_data = np.loadtxt("dataFiles/figure4A_data.txt")
     inputs = [32, 35, 38, 42, 45]
     plots_colours = np.linspace(0.2, 0.8, 5)
     fig = plt.figure()
@@ -39,8 +39,8 @@ def figure_A():
 
 
 def figure_B():
-    line_data = np.loadtxt("figure4B_lineData.txt")
-    scatter_data = np.loadtxt("figure4B_scatterData.txt")
+    line_data = np.loadtxt("dataFiles/figure4B_lineData.txt")
+    scatter_data = np.loadtxt("dataFiles/figure4B_scatterData.txt")
 
     inputs_scatter = [32, 35, 38, 42, 45]
     inputs = np.linspace(25, 50, 50)
@@ -60,7 +60,7 @@ def figure_B():
 
     
 def figure_C():
-    plot_data = np.loadtxt("figure4C_data.txt")
+    plot_data = np.loadtxt("dataFiles/figure4C_data.txt")
     inputs = [32, 35, 38, 42, 45]
     plots_colours = np.linspace(0.2, 0.8, 5)
     fig = plt.figure()
@@ -88,8 +88,8 @@ def figure_C():
     
 
 def figure_D():
-    line_data = np.loadtxt("figure4D_lineData.txt")
-    scatter_data = np.loadtxt("figure4D_scatterData.txt")
+    line_data = np.loadtxt("dataFiles/figure4D_lineData.txt")
+    scatter_data = np.loadtxt("dataFiles/figure4D_scatterData.txt")
     fig = plt.figure()
     ax1 = plt.subplot(111)
     ax1.spines['right'].set_visible(False)
