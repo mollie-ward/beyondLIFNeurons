@@ -10,7 +10,7 @@ purd_cmap = mlib.cm.get_cmap('PuRd')
 mlib.rcParams.update({'font.size': 24})
 
 def figure_AB():
-    plot_data = np.loadtxt("figure3AB_data.txt")
+    plot_data = np.loadtxt("dataFiles/figure3AB_data.txt")
     timesteps = np.linspace(0, int(1000), int(10000))
 
     fig = plt.figure()
@@ -46,7 +46,7 @@ def figure_AB():
 
 
 def figure_C():
-    plot_data = np.loadtxt("figure3C_data.txt")
+    plot_data = np.loadtxt("dataFiles/figure3C_data.txt")
     fig = plt.figure()
     total_time = 3
     time = total_time * 1000
@@ -69,7 +69,7 @@ def figure_C():
 
 
 def figure_DE():
-    plot_data = np.loadtxt("figure3DE_data.txt")
+    plot_data = np.loadtxt("dataFiles/figure3DE_data.txt")
     timesteps = np.linspace(0, int(0.1*1000), int(0.1*10000))
     fig = plt.figure()
     ax1 = plt.subplot(111)
@@ -103,7 +103,7 @@ def figure_DE():
 
 
 def figure_F():
-    plot_data = np.loadtxt("figure3F_data.txt")
+    plot_data = np.loadtxt("dataFiles/figure3F_data.txt")
     fig = plt.figure()
     total_time = 0.3
     time = total_time * 1000
