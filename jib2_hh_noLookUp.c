@@ -50,8 +50,8 @@ int main ()
   h_inf = alpha_h/(alpha_h+beta_h);
   h = h_inf;
 
-  alpha_n = (0.01*(V_soma+55)) / (1 - expk(-0.1*(V_soma+55)));
-  beta_n = 0.125*expk(-0.0125*(V_soma+65));
+  alpha_n = (0.01*(V_soma+55)) / (1 - hwexpf(-0.1*(V_soma+55)));
+  beta_n = 0.125*hwexpf(-0.0125*(V_soma+65));
   tau_n = 1/(alpha_n+beta_n);
   n_inf = alpha_n/(alpha_n+beta_n);
   n = n_inf;
@@ -75,29 +75,24 @@ int main ()
       V_soma += dV_soma;
 
       // update m, n and h using updated membrane voltage 
-      alpha_m = (0.1*(V_soma+40)) / (1 - expk(-0.1*(V_soma+40)));
-      beta_m =  4*expk(-0.0556*(V_soma+65));
+      alpha_m = (0.1*(V_soma+40)) / (1 - hwexpf(-0.1*(V_soma+40)));
+      beta_m =  4*hwexpf(-0.0556*(V_soma+65));
       tau_m = 1/(alpha_m+beta_m);
       m_inf = alpha_m/(alpha_m+beta_m);
-      m = m_inf + (m-m_inf)*expk(-dt/tau_m);
+      m = m_inf + (m-m_inf)*hwexpf(-dt/tau_m);
 
 
-      alpha_h = 0.07*expk(-0.05*(V_soma+65));
-      beta_h =  1 / (1+expk(-0.1*(V_soma+35)));
+      alpha_h = 0.07*hwexpf(-0.05*(V_soma+65));
+      beta_h =  1 / (1+hwexpf(-0.1*(V_soma+35)));
       tau_h = 1/(alpha_h+beta_h);
       h_inf = alpha_h/(alpha_h+beta_h);
-      h = h_inf + (h-h_inf)*expk(-dt/tau_h);
+      h = h_inf + (h-h_inf)*hwexpf(-dt/tau_h);
 
-      alpha_n = (0.01*(V_soma+55)) / (1 - expk(-0.1*(V_soma+55)));
-      beta_n = 0.125*expk(-0.0125*(V_soma+65));
+      alpha_n = (0.01*(V_soma+55)) / (1 - hwexpf(-0.1*(V_soma+55)));
+      beta_n = 0.125*hwexpf(-0.0125*(V_soma+65));
       tau_n = 1/(alpha_n+beta_n);
       n_inf = alpha_n/(alpha_n+beta_n);
-      n = n_inf + (n-n_inf)*expk(-dt/tau_n);
-    
-      n_pow = gK*n*n*n*n;
-      m_h_pow = gNa*m*m*m*h;
-      totG_soma = (gL + n_pow + m_h_pow)*1000;
-      totGE_soma = (gL*El + n_pow*Ek + m_h_pow*ENa)*1000;
+      n = n_inf + (n-n_inf)*hwexpf(-dt/tau_n);
       }
 
 // pass variable addresses as results
