@@ -70,7 +70,7 @@ val2 = hh_lookup[5][indices[0]];
 n_inf = (val1 - val2)*rem + hh_lookup[5][indices[0]];
 n = n_inf;
 
-num_data = 20001;
+num_data = 10000;
 //run through timesteps`
 for (uint32_t i = 0; i < num_data; i++) {
     // record value of V
