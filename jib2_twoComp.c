@@ -54,7 +54,6 @@ int main ()
   static float f_x_dend;
   static float dV_dend;
   
-  
   static float V_soma;
   static float v_rest = -100;
   V_soma = -65;
