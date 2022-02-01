@@ -72,9 +72,7 @@ n = n_inf;
 
 num_data = 10000;
 //run through timesteps`
-for (uint32_t i = 0; i < num_data; i++) {
-    // record value of V
-    data[i] = V_soma;
+for (int i = 0; i < num_data; i++) {
 
     // use values of m, n and h to calculate current and update membrane voltage
     totG_soma =  (gL + gK * (n*n*n*n) + gNa * (m*m*m) * h)*1000;
