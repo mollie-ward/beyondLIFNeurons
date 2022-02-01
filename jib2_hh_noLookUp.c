@@ -24,6 +24,12 @@ int main ()
   static float El = -54.3;
   static float ENa = 50;
   static float Ek = -77;
+  static float alpha_m;
+  static float beta_m;
+  static float alpha_h;
+  static float beta_h;
+  static float alpha_n;
+  static float beta_n;
   static float tau_m;
   static float tau_h;
   static float tau_n;
