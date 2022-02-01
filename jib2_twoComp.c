@@ -14,54 +14,46 @@ int main ()
   static char *   msg = "float exp(x) results:";
   static uint32_t num_data;
   static float    data[20001];
-  
+  static uint32_t num_data;
+
   // define constants and variables
   static float dt = 0.1;
   static float V_dend;
   V_dend = -65;
-  static float V_temp;
   static float Ie_dend = 35.80986219567645;
   static float dCaAP_count = 0;
   static float t_dCaAP;
   t_dCaAP = -200;
   static float K = 0;
   static float i_dCaAP = 0;
-  static float totGE = -70;
   static float v_th = -36;
   static float refract_period = 200;
   static float AB_refract_period = 77.7;
   static float denom = -0.08547009;
   static float w = 0.2;
-  static float C = -1;
-  static float F;
-  static float f;
-  static float dV;
-  static float c_denom = 0.9090909090909091;
   static float this_t = -0.05;
   static uint32_t count = 0;
   static float AB = 0;
-  static float totG_dend = 1;
   static float totGE_dend = -70;
-  static float B_dend = 0;
   static float C_dend = -1;
-  static float D_dend = 0;
   static float F_dend;
   static float b_dend = 0;
-  static float c_dend = C_dend*dt;
-  static float d_dend = 0;
+  static float c_dend = -0.1;
   static float f_dend;
   static float c_x_dend;
   static float f_x_dend;
   static float dV_dend;
-  
+  static float this_Ie_dend;
+
+
   static float V_soma;
   static float v_rest = -100;
   V_soma = -65;
   static float m = 0;
   static float n = 0;
   static float h = 0;
-  static float totG_soma = 0;
-  static float totGE_soma = 0;
+  static float totG_soma;
+  static float totGE_soma;
   static float gNa = 0.12;
   static float gK = 0.036;
   static float gL = 0.0003;
@@ -75,13 +67,12 @@ int main ()
   static float h_inf;
   static float n_inf;
   static float Ie_soma = 7.957747154594768;
-  static float B_soma = 0;
+  static float g_soma = 0.1;
   static float C_soma;
-  static float D_soma = g_soma;
+  static float D_soma = 0.1;
   static float F_soma;
-  static float b_soma = 0;
   static float c_soma;
-  static float d_soma = D_soma*dt;
+  static float d_soma = 0.01;
   static float f_soma;
   static float c_x_soma;
   static float f_x_soma;
@@ -95,8 +86,7 @@ int main ()
   static float lookup_tauh;
   static float lookup_taum;
   static float lookup_taun;
-  static float g_soma = 0.1;
-  static float g_dend = 0;
+
   
   // initialse values of m, n and h as m_inf, n_inf and h_inf
   // calculate indices for LUTs and remainder for interpolation
