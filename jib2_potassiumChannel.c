@@ -1,7 +1,7 @@
 #include <qpe.h>  // required qpe support functions
 #include <nmu.h>  // neuromorphic accelerators
 
-int main ()
+int maain ()
 {     
   // variables to be uploaded MUST be static
   //NOTE: otherwise their value can change before retrieval
